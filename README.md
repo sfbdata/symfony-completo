@@ -9,7 +9,7 @@ with [FrankenPHP](https://frankenphp.dev) and [Caddy](https://caddyserver.com/) 
 
 • how to run a symfony fresh project with docker using dunglas/symfony-docker 
 
-1. git clone [https://github.com/dunglas/symfony-do...](https://github.com/sfbdata/symfony-completo.git)
+1. git clone https://github.com/sfbdata/symfony-completo.git
 
  2. cd symfony-completo
 
