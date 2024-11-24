@@ -25,7 +25,7 @@ with [FrankenPHP](https://frankenphp.dev) and [Caddy](https://caddyserver.com/) 
  
 9. composer require twig
 
-10. npm install bootstrap
+10. npm install bootstrap --save-dev
 
 
 ## Features
