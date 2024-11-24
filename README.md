@@ -19,13 +19,15 @@ with [FrankenPHP](https://frankenphp.dev) and [Caddy](https://caddyserver.com/) 
 
 6. docker ps 
 
-7. docker exec -it name bash 
+7. docker exec -it name bash
 
-8. composer require symfony/maker-bundle --dev
+8. composer require webapp
+
+9. composer require symfony/maker-bundle --dev
  
-9. composer require twig
+10. composer require twig
 
-10. npm install bootstrap --save-dev
+11. npm install bootstrap --save-dev
 
 
 ## Features
