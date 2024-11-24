@@ -17,12 +17,32 @@ VOLUME /app/var/
 
 # persistent / runtime deps
 # hadolint ignore=DL3008
+# Atualiza o apt e instala dependências
+# Passo 1: Instalar pacotes essenciais
 RUN apt-get update && apt-get install -y --no-install-recommends \
-	acl \
-	file \
-	gettext \
-	git \
-	&& rm -rf /var/lib/apt/lists/*
+    acl \
+    file \
+    gettext \
+    git \
+    curl \
+    gnupg2 \
+    lsb-release \
+    ca-certificates \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Passo 2: Instalar Node.js 22.x
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Passo 3: Instalar npm via npx
+RUN curl -fsSL https://npmjs.org/install.sh | sh \
+    && npm install -g npm@latest
+
+# Passo 4: Verificar as versões instaladas
+RUN node -v && npm -v
 
 RUN set -eux; \
 	install-php-extensions \
@@ -88,7 +108,4 @@ RUN rm -Rf frankenphp/
 
 RUN set -eux; \
 	mkdir -p var/cache var/log; \
-	composer dump-autoload --classmap-authoritative --no-dev; \
-	composer dump-env prod; \
-	composer run-script --no-dev post-install-cmd; \
-	chmod +x bin/console; sync;
+	composer dump-autoload --classmap-aut
