@@ -7,11 +7,28 @@ with [FrankenPHP](https://frankenphp.dev) and [Caddy](https://caddyserver.com/) 
 
 ## Getting Started
 
-1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
-2. Run `docker compose build --no-cache` to build fresh images
-3. Run `docker compose up --pull always -d --wait` to set up and start a fresh Symfony project
-4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-5. Run `docker compose down --remove-orphans` to stop the Docker containers.
+• how to run a symfony fresh project with docker using dunglas/symfony-docker 
+
+1. git clone [https://github.com/dunglas/symfony-do...](https://github.com/sfbdata/symfony-completo.git)
+
+ 2. cd symfony-completo
+
+3. docker-compose build --no-cache 
+
+4. docker-compose up --pull always -d --wait 
+
+5. https://localhost/ 
+
+6. docker ps 
+
+7. docker exec -it name bash 
+
+8. composer require symfony/maker-bundle --dev
+ 
+9. composer require twig
+
+10. npm install bootstrap
+
 
 ## Features
 
